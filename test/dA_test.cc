@@ -27,11 +27,11 @@ int main() {
     encoder_2.train(data_train, lr_2, cl_2);
     std::cout << idx_epoch << "\t";
     std::cout << std::setprecision(8) << std::setw(10) << std::left << std::setfill('0') 
-              << nn::pow(data_test - encoder_1.reconstruct(data_test), 2).sum()
-                 / data_test.shape()[0] << "\t";
+              << nn::pow(data_train - encoder_1.reconstruct(data_train), 2).sum()
+                 / data_train.shape()[0] << "\t";
     std::cout << std::setprecision(8) << std::setw(10) << std::left << std::setfill('0') 
-              << nn::pow(data_test - encoder_2.reconstruct(data_test), 2).sum() 
-                 / data_test.shape()[0] << "\n";
+              << nn::pow(data_train - encoder_2.reconstruct(data_train), 2).sum() 
+                 / data_train.shape()[0] << "\n";
   }
   std::cout << data_test << std::endl;
   std::cout << encoder_1.reconstruct(data_test) << std::endl;

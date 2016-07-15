@@ -17,7 +17,7 @@ Last modified: 2016-07-15
 int main() {
   int num_epochs = 1000, idx_epoch, 
       num_vis = 8, 
-      num_hid_1 = 6 num_hid_2 = 2, num_hid_3 = 6;
+      num_hid_1 = 6, num_hid_2 = 2, num_hid_3 = 6;
   double lr = 1e-3, 
          cl_1 = 1e-2, cl_2 = 1e-2, cl_3 = 1e-8;
   Matrix data_train(100, num_vis, "binomial", 1.0, 0.5),
@@ -35,7 +35,7 @@ int main() {
                  / data_train.shape()[0] / data_train.shape()[1] << "\t";
     std::cout << std::setprecision(8) << std::setw(10) << std::left << std::setfill('0') 
               << nn::pow(data_train - encoder_2.reconstruct(data_train), 2).sum() 
-                 / data_train.shape()[0] / data_train.shape()[1] << "\n";
+                 / data_train.shape()[0] / data_train.shape()[1] << "\t";
     std::cout << std::setprecision(8) << std::setw(10) << std::left << std::setfill('0') 
               << nn::pow(data_train - encoder_3.reconstruct(data_train), 2).sum() 
                  / data_train.shape()[0] / data_train.shape()[1] << "\n";                 

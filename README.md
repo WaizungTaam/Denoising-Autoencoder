@@ -9,6 +9,6 @@ further optimizations are omitted.
 
 Demo
 ----
-`make`
+`$ make`
 
 Compile test passed on Ubuntu 14.04.3 LTS, g++ 4.8.4.

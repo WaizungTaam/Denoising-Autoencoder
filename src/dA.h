@@ -17,6 +17,7 @@ class dA {
 public:
   dA() = default;
   dA(int, int);
+  dA(const Matrix &, const Matrix &, const Matrix &);
   dA(const dA &) = default;
   dA(dA &&) = default;
   dA & operator=(const dA &) = default;

@@ -17,6 +17,13 @@ dA::dA(int num_vis, int num_hid) {
   w_bias_vis = Matrix(1, num_vis, "uniform", -1.0, 1.0);
   w_bias_hid = Matrix(1, num_hid, "uniform", -1.0, 1.0);
 }
+dA::dA(const Matrix & weight_init, 
+       const Matrix & w_bias_vis_init, 
+       const Matrix & w_bias_hid_init) :
+  weight(weight_init), 
+  w_bias_vis(w_bias_vis_init),
+  w_bias_hid(w_bias_hid_init) {
+}
 Matrix dA::reconstruct(const Matrix & mat_vis) {
   return hid_to_vis(vis_to_hid(mat_vis));
 }
